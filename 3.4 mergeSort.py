@@ -1,0 +1,120 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug  8 20:24:57 2019
+
+@author: jatin
+"""
+
+def merge_sort(A):
+    l = len(A)
+    if l<2:
+        return A
+    else:
+        mid = l//2
+        
+        left = A[:mid]
+#        print("left", left)
+        
+        right = A[mid:]
+#        print("right", right)
+        
+        merge_sort(left)
+        merge_sort(right)
+        
+        merge(left, right, A)
+    return A
+
+
+def merge(left, right, A ):
+    nl = len(left)
+    nr= len(right)
+    i=0 
+    """ for left"""
+    
+    j=0 
+    """ for right"""
+    
+    k=0 
+    """ for main A"""
+    
+    while(i<nl and j<nr):
+        if left[i]<=right[j]:
+            A[k]=left[i]
+            i+=1
+        else:
+            A[k]=right[j]
+            j+=1
+        k+=1
+    while i < nl:
+        A[k]=left[i]
+        i+=1
+        k+=1
+    while j<nr:
+        A[k]=right[j]
+        j+=1
+        k+=1
+    return A
+
+def main():
+    A = [64, 25, 12, 22, 11]  
+    print("Array to be sorted are:\n", A, "\n")
+    
+    A = merge_sort(A)
+    print ("Merge Sorted array") 
+    print(A)
+
+main()
+
+"""
+
+Merge Sort: https://www.geeksforgeeks.org/merge-sort/
+
+Time Complexity	:                           Space Complexity:
+Best	       Average	        Worst	       Worst
+
+Î©(n log(n))	Î˜(n log(n))	    O(n log(n))	    O(n)
+
+
+Time Complexity: O(n*2)
+
+Auxiliary Space: O(1)
+
+
+Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves,
+ calls itself for the two halves and then merges the two sorted halves. 
+ The merge() function is used for merging two halves. The merge(arr, l, m, r) 
+ is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges 
+ the two sorted sub-arrays into one. See following C implementation for details.
+ 
+
+MergeSort(arr[], l,  r)
+If r > l
+     1. Find the middle point to divide the array into two halves:  
+             middle m = (l+r)/2
+     2. Call mergeSort for first half:   
+             Call mergeSort(arr, l, m)
+     3. Call mergeSort for second half:
+             Call mergeSort(arr, m+1, r)
+     4. Merge the two halves sorted in step 2 and 3:
+             Call merge(arr, l, m, r)
+             
+             
+Time Complexity: Sorting arrays on different machines. Merge Sort is a recursive algorithm and time complexity can be expressed as following recurrence relation.
+T(n) = 2T(n/2) + \Theta(n)
+
+The above recurrence can be solved either using Recurrence Tree method or Master method. 
+It falls in case II of Master Method and solution of the recurrence is \Theta(nLogn).
+Time complexity of Merge Sort is \Theta(nLogn) in all 3 cases (worst, average and best) as merge sort always divides the array into two halves and take linear time to merge two halves.
+
+Auxiliary Space: O(n)
+
+Algorithmic Paradigm: Divide and Conquer
+
+Sorting In Place: No in a typical implementation
+
+Stable: Yes
+
+
+"""
+
+        
