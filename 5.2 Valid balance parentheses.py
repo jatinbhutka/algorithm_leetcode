@@ -1,7 +1,6 @@
 """
 
-
-
+# 
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
@@ -33,3 +32,32 @@ Output: true
 
 
 """
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        
+        if len(s) == 1 :
+            return False
+        
+        if len(s) == 0:
+            return True
+        
+        stack = []
+        
+        ref = {')':'(', ']':'[', '}':'{'}
+        
+        for c in s:
+            if c in ('(', '{', '['):
+                stack.append(c)
+            else:
+                if len(stack) == 0:
+                    return False
+                if stack[len(stack)-1] != ref[c]:
+                    return False
+                else:
+                    stack.pop()
+                          
+        if len(stack) == 0:
+            return True
+                
+      
