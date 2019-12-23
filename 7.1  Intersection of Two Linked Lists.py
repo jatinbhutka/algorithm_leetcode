@@ -80,4 +80,20 @@ The solution is straightforward: maintaining two pointers in the lists under the
 We need to calculate the length of each list though. So O(N) for time and O(1) for space.
 """
 
+
+Class Solution():
+   def getIntersectionNode(self, headA, headB):
+       if None in (headA, headB):
+           return None
+       nodeA, nodeB = headA, headB
+       while nodeA is not nodeB:
+           if nodeA is None:
+               nodeA = headB
+           else:
+               nodeA = nodeA.next
+           if nodeB is None:
+               nodeB = headA
+           else:
+               nodeB = nodeB.next
+       return nodeA
         
