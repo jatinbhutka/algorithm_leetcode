@@ -20,6 +20,19 @@ def findMedian(arr):
     return median
     
 
+def findMode1(num_list):
+    import collections
+       
+    # calculate the frequency of each item
+    data = collections.Counter(num_list)
+    data_list = dict(data)
+    
+    # Print the items with frequency
+    
+    # Find the highest frequency
+    max_value = max(list(data.values()))
+    mode_val = [num for num, freq in data_list.items() if freq == max_value]
+    return mode_val
 
 def findMode(n_num):
     dic = {}
@@ -39,3 +52,4 @@ n_num = [1, 2, 3, 4,5,6, 6, 5]
 print 'Mean :', findMean(n_num)
 print 'Median:', findMedian(n_num)
 print 'Mode:', findMode(n_num)
+print 'Mode1:', findMode1(n_num)
