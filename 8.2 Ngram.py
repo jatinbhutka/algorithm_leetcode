@@ -35,3 +35,27 @@ def nGram1(s, n):
 
 print(nGram1(s, N))
     
+
+"""
+# In Interview - Google Docs:
+S = ‘Mary had a little lamb’
+N = 3
+
+R = [‘Mary had a’, ‘had a little’, ‘a little lamb’]
+
+
+s = s.split(“ ”)
+def nGram(s, n):
+	r = []
+	For i in range(len(s)-(n)):
+		a = s[i: (i+n)]
+		a = ‘ ‘.join(a)
+	r.append(a)
+	return r
+
+
+		
+		
+
+
+"""
