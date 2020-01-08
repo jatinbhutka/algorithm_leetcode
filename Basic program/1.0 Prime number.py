@@ -46,3 +46,5 @@ for i in range(50):
     print(i,checkPrime3(i), "\n")
 
 
+#SAMPLE pull req.
+
