@@ -1,5 +1,6 @@
 # prime Number:
 
+#Method 1:
 def checkPrime(n):
     if (n <= 1):
         return False
@@ -10,3 +11,5 @@ def checkPrime(n):
     return True
 
 print(checkPrime(-1))
+
+
