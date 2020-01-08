@@ -10,6 +10,39 @@ def checkPrime(n):
             return False
     return True
 
-print(checkPrime(-1))
+
+#Method 2:
+def checkPrime1(n):
+    if n<=1:
+        return False
+    
+    i = 2
+    while i < n:
+        if n % i == 0:
+            return False
+        i = i+1
+    return True
+
+
+# Method 3: Best Method O(sq(n))
+def checkPrime3(n):
+    if n<=1:
+        return False
+    i = 2
+    while i <= n**0.5:
+        if n % i == 0:
+            return False
+        i = i+1
+    return True
+    
+    
+    
+
+print(checkPrime(5))
+print(checkPrime1(9))
+print(checkPrime3(47))
+
+for i in range(50):
+    print(i,checkPrime3(i), "\n")
 
 
