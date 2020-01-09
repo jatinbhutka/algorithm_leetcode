@@ -48,3 +48,44 @@ class Solution:
             s.next = l1
             
         return new_head
+
+    
+    
+    
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+# Method 2:
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
+        
+        if l1.val <= l2.val:
+            newhead = l1
+            l1 = l1.next
+        else:
+            newhead = l2
+            l2 = l2.next
+        rethead = newhead
+        
+        while l1 and l2:
+            if l1.val <= l2.val:
+                newhead.next = l1
+                l1 = l1.next
+            else:
+                newhead.next = l2
+                l2 = l2.next
+            newhead = newhead.next
+        if l1:
+            newhead.next = l1
+        else:
+            newhead.next = l2
+        return rethead
+        
