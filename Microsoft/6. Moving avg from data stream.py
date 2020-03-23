@@ -1,3 +1,5 @@
+Method 1:
+
 class MovingAverage:
 
     def __init__(self, size: int):
@@ -17,6 +19,38 @@ class MovingAverage:
         movingAvg = (self.sum)/curSize
         return movingAvg
    
+# Your MovingAverage object will be instantiated and called as such:
+# obj = MovingAverage(size)
+# param_1 = obj.next(val)
+
+
+
+
+## Method 2: This is Better Solution
+
+class MovingAverage:
+
+    def __init__(self, size: int):
+        """
+        Initialize your data structure here.
+        """
+        self.list = []
+        self.capacity = size
+        self.sum = 0
+        
+    def next(self, val: int) -> float:
+        currSize = len(self.list)
+        if currSize >= self.capacity:
+            ele_pop = self.list.pop(0)
+            self.sum -= ele_pop
+            currSize -= 1
+        self.sum += val
+        currSize += 1
+        movingAvg = (self.sum)/currSize
+        self.list.append(val)
+        return movingAvg
+
+
 # Your MovingAverage object will be instantiated and called as such:
 # obj = MovingAverage(size)
 # param_1 = obj.next(val)
