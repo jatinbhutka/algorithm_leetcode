@@ -55,3 +55,28 @@ class Solution:
                 res += (height - i) * (width - j)
                 width = j 
         return res     
+    
+    
+    
+    class Solution(object):
+    def countNegatives(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        # Time: O(M+N)
+        # Space: O(1)
+        
+        n_rows = len(grid)
+        n_col = len(grid[0])
+        res = 0
+        i = n_rows - 1
+        j = 0
+        while i >= 0 and j<n_col:
+            if grid[i][j] < 0:
+                res += n_col - j
+                i -= 1
+                j = 0
+            else:
+                j += 1
+        return res
