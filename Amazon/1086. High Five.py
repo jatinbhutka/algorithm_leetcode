@@ -19,5 +19,34 @@ class Solution:
             res.append(r)
         return res
         
+
         
         
+import math
+class Solution:
+    def highFive(self, items: List[List[int]]) -> List[List[int]]:
+        
+        map = {}
+
+        items.sort()
+
+        for item in items:
+            id = item[0]
+            score = item[1]
+            if id not in map:
+                map[id] = []
+            map[id].append(score)
+
+        result = []
+
+        for k,v in map.items():
+            temp = v.copy()
+            temp.sort()
+            temp = temp[::-1]
+            average = 0.0
+            for i in range(5):
+                average += temp[i]
+            average = average / 5
+            result.append([k,math.floor(average)])
+
+        return result        
