@@ -31,7 +31,25 @@ class Solution:
             neg -= 1  
         return ret
         
+
         
+class Solution:
+    def sortedSquares(self, A):
+        ret = [0] * len(A)
+        l = 0
+        r = len(A) - 1
+        while l <= r:
+            left = abs(A[l])
+            right = abs(A[r])
+            if left < right:
+                ret[r-l] = right * right
+                r -= 1
+            else:
+                ret[r-l] = left * left
+                l += 1
+        return ret
+
+                
         
 class Solution(object):
     def sortedSquares(self, A):
