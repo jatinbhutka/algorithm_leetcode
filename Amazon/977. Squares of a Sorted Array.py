@@ -27,7 +27,7 @@ class Solution:
             ret.append(A[pos])
             pos += 1
         while neg >= 0:
-            ret.append(A[neg])
+           ret.append(A[neg])
             neg -= 1  
         return ret
         
@@ -80,3 +80,11 @@ class Solution(object):
 
         return ans        
         
+
+        
+class Solution:
+    def sortedSquares(self, A: List[int]) -> List[int]:
+        for i in range(len(A)):
+            A[i] *= A[i]
+        A.sort()
+        return A        
