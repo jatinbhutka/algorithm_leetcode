@@ -2,15 +2,19 @@
 # Time: O(n)
 # Space: O(1)
 
+
+# Kadane's Algo:
+
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        cur_sum = max_sum = float(-inf)
-        for i in range(len(nums)):
-            cur_sum += nums[i]
-            cur_sum = max(nums[i], cur_sum)
-            max_sum = max(cur_sum, max_sum)
+        max_cur = max_global = nums[0]
+        for i in range(1, len(nums)):
             
-        return max_sum
+            max_cur += nums[i]
+            max_cur = max(nums[i], max_cur)
+            max_global = max(max_cur, max_global)
+            
+        return max_global
         
         
 
