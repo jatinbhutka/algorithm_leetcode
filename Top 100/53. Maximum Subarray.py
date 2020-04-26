@@ -1,3 +1,20 @@
+# Brute Force:
+
+# Time: O(n2)
+# Space: O(1)
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_global = float(-inf)
+        for i in range(0, len(nums)):
+            max_cur = nums[i]
+            for j in range(i+1,len(nums)):
+                max_cur += nums[j]
+                max_global = max(max_cur, max_global)
+            
+        return max_global
+
+
 
 # Time: O(n)
 # Space: O(1)
