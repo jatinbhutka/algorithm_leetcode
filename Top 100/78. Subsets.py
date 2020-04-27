@@ -1,4 +1,4 @@
-# Method 1: Pattern
+# Method 1: Pattern Iteratively
 
 """
 nums = []
@@ -57,7 +57,7 @@ class Solution:
         
         
 """
-# Method2: DFS
+# Method2: DFS recursively
 
                                         []
                                      /   |  \
