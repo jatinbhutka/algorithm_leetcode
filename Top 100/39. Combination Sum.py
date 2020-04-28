@@ -14,6 +14,8 @@ Two types of Brute force approch:
       
 Note: A greedy algorithm 
               is an algorithmic strategy that makes the best optimal choice at each small stage with the goal of this eventually leading to a globally optimum solution. This means that the algorithm picks the best solution at the moment without regard for consequences
+              
+              A greedy algorithm is any algorithm that follows the problem-solving heuristic of making the locally optimal choice at each stage with the intent of finding a global optimum
     
 """
 
