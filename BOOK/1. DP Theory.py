@@ -2,8 +2,21 @@
 
 # https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
 # Dynamic Programming: 
+
+
+
+
+
+
 """
+# Two Main Properties of DP Problem:
+
+# 1. Overlapping Subproblem.
+# 2. Optimal Substructure
+
 1) Overlapping Subproblems:
+##############################
+
 Like Divide and Conquer, Dynamic Programming combines solutions to sub-problems. Dynamic Programming is mainly used when solutions of same subproblems are needed again and again. In dynamic programming, computed solutions to subproblems are stored in a table so that these don’t have to be recomputed. So Dynamic Programming is not useful when there are no common (overlapping) subproblems because there is no point storing the solutions if they are not needed again. For example, Binary Search doesn’t have common subproblems. If we take an example of following recursive program for Fibonacci Numbers, there are many subproblems which are solved again and again.
 
 There are following two different ways to store the values so that these values can be reused:
@@ -105,6 +118,57 @@ print(fibBU(n))
     Time taken by Recursion method is much more than the two Dynamic Programming 
     techniques mentioned above – Memoization and Tabulation!
 """
+
+
+
+
+
+# 2. Optimal Substructure:
+##############################
+    
+"""    
+A given problems has Optimal Substructure Property if optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.
+
+For example, 
+The Shortest Path problem has following optimal substructure property:
+If a node x lies in the shortest path from a source node u to destination node v then the shortest path from u to v is combination of shortest path from u to x and shortest path from x to v. 
+
+The standard All Pair Shortest Path algorithms like 
+  1. Floyd–Warshall and 
+  2. Bellman–Ford are typical examples of Dynamic Programming.
+
+On the other hand, the Longest Path problem doesn’t have the Optimal Substructure property. 
+
+Here by Longest Path we mean longest simple path (path without cycle) between two nodes. 
+
+           Q   ---------> R
+              <--------         
+          | ^           | ^
+          | |           | |
+          | |           | |
+          V |           V |
+           S  ---------> T
+              <--------
+          
+
+
+Consider the following unweighted graph given in the CLRS book. There are two longest paths from q to t: q→r→t and q→s→t. Unlike shortest paths, these longest paths do not have the optimal substructure property. For example, the longest path q→r→t is not a combination of longest path from q to r and longest path from r to t, because the longest path from q to r is q→s→t→r and the longest path from r to t is r→q→s→t.
+
+    
+    
+"""    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
