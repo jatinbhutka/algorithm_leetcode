@@ -19,7 +19,7 @@ class Solution:
 
 # Approch 2: Two Pointer
 # Steps:
-#   1. 
+#   1. Use properties of sorted array to solve problem
 #   2. 
 #   3. 
 
