@@ -44,6 +44,8 @@ class Solution:
         #   2. 
         #   3. If temp < 1: 
         #   4. If temp > 1: 
+        
+        
 """
 We are classifying the array into four groups: red, white, unclassified, and blue. Initially we group all elements into unclassified. We iterate from the beginning as long as the white pointer is less than the blue pointer.
 
@@ -51,6 +53,27 @@ If the white pointer is red (nums[white] == 0), we swap with the red pointer and
 """
 # Time Complexity: O(N) 
 # Space Complexity: O(1) 
+
+"""
+r w b
+0 0 5
+[2 1 0 1 2 0]
+
+0 0 4
+[0 1 0 1 2 2]
+
+1 1 4
+[0 1 0 1 2 2]
+
+1 2 4
+[0 1 0 1 2 2]
+
+2 3 4
+[0 0 1 1 2 2]
+
+2 4 4
+[0 0 1 1 2 2]
+"""
 
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
@@ -77,10 +100,39 @@ class Solution:
 
         # One Passs solution:
         # Steps:
-        #   1. 
-        #   2. 
-        #   3. If temp < 1: 
-        #   4. If temp > 1: 
+        #   1. Keep Two Pointer for 0 and 1
+        #   2. Iterate through 0 to n:
+        #       i. Store ele in temp.
+        #       ii. Replace ele by 2.
+        #       iii. If temp < 2: then ele_i = 1 Increase 1s pointer
+        #       iv.  If temp == 0: then ele_j Increase os pointer
+  
+  
+"""  
+                  
+[2 1 0 1 2 0]
+
+0,0,0 --> 0,0,1
+[2]
+
+0,1,2
+[2 2] --> [1 2]
+
+0,2,2 --> 1,2,3
+[1 2 2] ---> [1 1 2] ---> [0 1 2]
+
+1,2,3 --> 1,3,4
+[0 1 2 2] --> [0 1 1 2]
+
+1,3,5
+[0 1 1 2 2]
+
+1,4,6 --> 2,4,6
+[0 1 1 2 2 2] ---> [0 1 1 1 2 2] ---> [0 0 1 1 2 2]
+  
+"""
+  
+  
   
 # Time Complexity: O(N) 
 # Space Complexity: O(1) 
@@ -101,4 +153,7 @@ class Solution:
                 j += 1
             if temp == 0:
                 nums[i] = 0
-                i += 1                
+                i += 1  
+                
+                
+                
