@@ -21,6 +21,8 @@ class Solution:
 # Time: O(N Log N)
 # Space: O(1)
 
+
+# Here, If the majority element ever exit it will be at the middle of the array after sorting.
 class Solution:
     def majorityElement(self, nums):
         nums.sort()
