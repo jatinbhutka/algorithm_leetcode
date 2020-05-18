@@ -15,7 +15,19 @@ class Solution:
             if val > len(nums)//2:
                 return key
             
-            
+   
+
+# Sorting:
+# Time: O(N Log N)
+# Space: O(1)
+
+class Solution:
+    def majorityElement(self, nums):
+        nums.sort()
+        return nums[len(nums)//2]
+
+
+
 # Moore Voting Algorithm:        
 # Time: O(N)
 # Space: O(1)
