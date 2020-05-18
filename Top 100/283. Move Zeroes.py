@@ -42,5 +42,22 @@ class Solution:
             
         
         
-
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        i_non_zero = 0
+        j_iter = 0
+        while j_iter < len(nums):
+            if nums[j_iter] != 0:
+                nums[i_non_zero] = nums[j_iter]
+                i_non_zero += 1
+            j_iter += 1
+        
+        
+        for i in range(i_non_zero, len(nums)):
+            nums[i] = 0
+        return nums
 
