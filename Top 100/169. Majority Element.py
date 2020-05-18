@@ -30,7 +30,9 @@ class Solution:
 
 
 
-# Moore Voting Algorithm:        
+# Moore Voting Algorithm: 
+
+# https://www.youtube.com/watch?v=kRKZ0s2TjJw
 # Time: O(N)
 # Space: O(1)
 class Solution:
