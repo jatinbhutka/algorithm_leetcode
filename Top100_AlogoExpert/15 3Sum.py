@@ -15,6 +15,31 @@ Space Complexity: O(N)
 # Method 1: Two Pointers
 
 
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        res = []
+        nums.sort()
+        for i in range(len(nums)-2):
+            if i == 0 or nums[i-1] != nums[i]:
+                lower = i+1
+                higher = len(nums)-1
+                while lower < higher :   
+                    if nums[lower] + nums[higher] + nums[i] < 0:
+                        lower += 1
+                    elif nums[lower] + nums[higher] + nums[i] > 0:
+                        higher -= 1
+                    elif nums[lower] + nums[higher] + nums[i] == 0:
+                        res.append([nums[i], nums[lower], nums[higher]])
+                        lower += 1
+                        while lower<higher and nums[lower] == nums[lower-1]:
+                            lower += 1
+        return res
+
+
 
 class Solution(object):
     def threeSum(self, nums):
@@ -38,3 +63,8 @@ class Solution(object):
                         r -= 1
                     l += 1; r -= 1
         return res
+
+       
+       
+       
+# Method 2: Hash Table:
